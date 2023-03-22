@@ -1,0 +1,157 @@
+$primary-color: var(--clr-primary-000);
+$secondary-color: var(--clr-primary-200);
+$third-color: var(--clr-primary-400);
+
+.nav-parent {
+  // display: flex;
+  position: relative;
+}
+
+
+.navbar__menu-list{
+  text-align: left;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: $third-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  transition: all 0.2s ease-in-out;
+
+  &__logo {
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $primary-color;
+    }
+  }
+
+  &.navbar__menu-item {
+    color: $primary-color;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    &-button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+      width: 2rem;
+      height: 2rem;
+      position: relative;
+
+      &::before,
+      &::after,
+      .navbar__menu-icon {
+        background-color: $primary-color;
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &::before {
+        top: -0.5rem;
+      }
+
+      &::after {
+        bottom: -0.5rem;
+      }
+
+      .navbar__menu-icon {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: $third-color;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease-in-out;
+
+      &--active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &-item {
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        a {
+          color: $primary-color;
+          text-decoration: none;
+          font-size: 1.2rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.1rem;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 37.5em) {
+    &__menu {
+      &-button {
+        display: none;
+      }
+
+      &-list {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        background-color: transparent;
+        box-shadow: none;
+        border-bottom: none;
+
+        &-item {
+          padding: 0 1rem;
+
+          &:last-child {
+            padding-right: 0;
+          }
+
+          a {
+            font-size: 1rem;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+  }
+}

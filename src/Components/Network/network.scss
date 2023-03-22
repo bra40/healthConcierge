@@ -1,0 +1,161 @@
+.flex-container {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  flex-flow: row-reverse wrap;
+  gap: var(--padding);
+  flex-grow: 1;
+}
+
+.flex-item {
+  -webkit-flex: 1 auto;
+  -moz-flex: 1 auto;
+  flex: 1 auto;
+  align-self: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+
+  border: black 0.1em dashed;
+  background-color: var(--clr-primary-100);
+  border-radius: .5rem;
+
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  overflow: hidden;
+}
+
+.flex-item img {
+  width: 100%;
+  overflow: hidden;
+}
+
+.flex-item .name {
+  background-color: var(--clr-primary-200);
+  color: var(--clr-primary-000);
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: .3rem;
+  padding: var(--padding);
+}
+
+.flex-item:hover {
+  background-color: var(--clr-primary-100);
+}
+
+.flex-item:hover .name {
+  visibility: visible;
+}
+
+.flex-item:hover img {
+  opacity: 0.5;
+}
+
+// ---
+@media screen and (max-width:50em) {
+    .flex-item {
+        flex-direction: column-reverse;
+    }
+
+    .flex-item img,
+    .flex-item .name {
+        width: calc(100% - 2rem);
+        margin-right:auto;
+        margin-left:auto;
+    }
+
+    .flex-item.name {
+        overflow: visible;
+        margin-bottom:-1.5rem; /* adjust as needed */
+    }
+}
+// ----
+
+
+.justify-center {
+  display: flex;
+  justify-self: center;
+}
+
+.spaced {
+  letter-spacing: 0.2rem;
+}
+
+.grid-container {
+  display: grid;
+  padding-block: var(--padding-3);
+  grid-template-rows: auto;
+  gap: var(--padding) var(--padding);
+  border: black 0.1em dashed;
+  background-color: var(--clr-primary-150);
+  // grid-auto-flow: row dense;
+  // flex-grow: 1;
+  grid-template-areas:
+    "net1"
+    "col1"
+    "net2"
+    "col2"
+    "net3"
+    "col3"
+    "net4"
+    "col4";
+}
+
+@media (min-width: 37.5em) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr 1fr;
+    gap: clamp(var(--padding), 5%, var(--padding-3)) var(--padding);
+    gap: var(--padding-3);
+    grid-auto-flow: row;
+    grid-template-areas:
+      "net1 net2 net3 net4"
+      "col1 col2 col3 col4"
+      "col1 col2 col3 col4"
+      "col1 col2 col3 col4"
+      "col1 col2 col3 col4";
+  }
+}
+
+.col1 {
+  grid-area: col1;
+}
+
+.col2 {
+  grid-area: col2;
+}
+
+.col3 {
+  grid-area: col3;
+}
+
+.col4 {
+  grid-area: col4;
+}
+
+.net1 {
+  grid-area: net1;
+}
+
+.net2 {
+  grid-area: net2;
+}
+
+.net3 {
+  grid-area: net3;
+}
+
+.net4 {
+  grid-area: net4;
+}

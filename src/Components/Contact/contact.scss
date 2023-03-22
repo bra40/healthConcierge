@@ -1,0 +1,264 @@
+.ContactContent {
+  // display
+  display: flex;
+  flex-direction: column;
+  // type
+  text-align: center;
+}
+
+.ContactFormHeader {
+  // display
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // box-model
+  --form-padding: 1.8rem;
+  padding: var(--form-padding);
+  background-color: var(--clr-primary-400);
+  // type
+  text-align: center;
+  // misc
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.ContactFormTop {
+  // display
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  // box-model
+  margin-inline: auto;
+  max-height: 100%;
+}
+
+.ContactFormTopImg {
+  // box-model
+  height: 4em;
+}
+
+.ContactListImg {
+  // box-model
+  height: 100%;
+  // misc
+  border-radius: 50%;
+}
+
+.ContactFormTopTitle {
+  // type
+  color: var(--clr-form-input);
+  font-family: var(--ff-title);
+}
+
+.ContactOptionBlock {
+  // display
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // box-model
+  min-width: 25rem;
+  padding: var(--padding);
+  margin: calc(1.5 * var(--thick-padding)) auto;
+  // background-color: var(--clr-neutral-200);
+  // type
+  color: var(--clr-primary-000);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-body);
+  text-align: center;
+  letter-spacing: 0.28rem;
+  // misc
+  border-radius: var(--thick-padding);
+  cursor: pointer;
+}
+
+.ContactOverlay {
+  // positioning
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  // box-model
+  background-color: var(--clr-primary-900);
+}
+
+.modalBgDarken {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  filter: blur(5px);
+  z-index: -1;
+}
+
+.ReactModal__Overlay--after-open ContactOverlay {
+  // opacity: 0.5;
+  filter: blur(5px);
+  // backdrop-filter: blur(5px);
+}
+
+
+.ReactModal__Content.ReactModal__Content--after-open.Modal {
+  // display
+  display: grid;
+  grid-template-rows: minmax(0, 0.14fr) minmax(0, 1fr);
+  grid-template-areas:
+    "header"
+    "form";
+  // positioning
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  z-index: 40;
+  // box-model
+  max-width: 80rem;
+  margin-inline: auto;
+  background-color: var(--clr-primary-200);
+  // misc
+  border-radius: 1.5rem;
+
+  .ContactFormContainer {
+    // grid-area
+    grid-area: form;
+    // misc
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+.ContactContainer {
+  // display
+  display: flex;
+  flex-direction: column;
+  // box-model
+  // background-color: var(--clr-primary-900);
+}
+
+.ContactContent {
+  // display
+  display: flex;
+  flex-direction: column;
+  // type
+  text-align: center;
+}
+
+.ContactFormHeader {
+  // display
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // box-model
+  --form-padding: 1.8rem;
+  padding: var(--form-padding);
+  background-color: var(--clr-primary-400);
+  // type
+  text-align: center;
+  // misc
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.ContactFormTop {
+  // display
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  // box-model
+  margin-inline: auto;
+  max-height: 100%;
+}
+
+.ContactFormTopImg {
+  // box-model
+  height: 4em;
+}
+
+.ContactListImg {
+  // box-model
+  height: 100%;
+  // misc
+  border-radius: 50%;
+}
+
+.ContactFormTopTitle {
+  // type
+  color: var(--clr-form-input);
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bold);
+}
+
+.ContactOverlay {
+  // positioning
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  // box-model
+  background-color: var(--clr-dark);
+}
+
+.ReactModal__Content.ReactModal__Content--after-open.Modal {
+  // display
+  display: grid;
+  grid-template-rows: minmax(0, 0.14fr) minmax(0, 1fr);
+  grid-template-areas:
+    "header"
+    "form";
+  // positioning
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  z-index: 40;
+  // box-model
+  max-width: 80rem;
+  margin-inline: auto;
+  background-color: var(--clr-primary-200);
+  // misc
+  border-radius: 1.5rem;
+
+  .ContactFormContainer {
+    // grid-area
+    grid-area: form;
+    // misc
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+.ContactOverlay {
+  // positioning
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  // box-model
+  background-color: var(--clr-primary-850);
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: left;
+    justify-content: flex-end;
+
+    border: none;
+    background: var(--clr-primary-200);
+    color: var(--clr-primary-000);
+    border-radius: 0.5em;
+  }
+
