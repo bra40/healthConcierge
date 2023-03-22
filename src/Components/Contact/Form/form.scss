@@ -162,7 +162,7 @@
   color: var(--clr-primary-000);
   border: none;
   // misc
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
 
 .FormLabel {
@@ -252,13 +252,14 @@
   margin-top: -1rem;
   margin-bottom: -1rem;
   margin-inline: auto;
-  background-color: var(--clr-error-bg);
   // type
   line-height: 0.9;
   letter-spacing: 0.182em;
   font-weight: 600;
-  font-style: italic;
+  font-style: oblique;
   color: var(--clr-error);
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
   // misc
   border-radius: 1rem;
 }

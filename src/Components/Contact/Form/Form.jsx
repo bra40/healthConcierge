@@ -106,7 +106,7 @@ export default function Form({ closeModal }) {
               <div className="FormErrorContainer">
                 <ErrorMessage name="email">
                   {(errorMsg) => (
-                    <div className="FormError fs-label">{errorMsg}</div>
+                    <div className="FormError">{errorMsg}</div>
                   )}
                 </ErrorMessage>
               </div>
