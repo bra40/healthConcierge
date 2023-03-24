@@ -5,9 +5,9 @@ import { Formik, Form as FormikForm, Field, ErrorMessage } from "formik";
 
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
-const SERVICE_ID = "gmail";
-const TEMPLATE_ID = "hire_template";
-const USER_ID = "CN0RNMNddtaLSaAyj";
+const SERVICE_ID = "zoho";
+const TEMPLATE_ID = "health_concierge";
+const USER_ID = "29rVrqz5SgVe2mvsb";
 
 const initialValues = {
   name: "",
@@ -105,9 +105,7 @@ export default function Form({ closeModal }) {
               </div>
               <div className="FormErrorContainer">
                 <ErrorMessage name="email">
-                  {(errorMsg) => (
-                    <div className="FormError">{errorMsg}</div>
-                  )}
+                  {(errorMsg) => <div className="FormError">{errorMsg}</div>}
                 </ErrorMessage>
               </div>
 
